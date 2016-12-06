@@ -14,3 +14,7 @@ yaletown = Store.create(name: "Yaletown", annual_revenue: "430000", womens_appar
 
 puts Store.count
 
+@mens_stores = Store.where(mens_apparel: true)
+@mens_stores.each do |store|
+  print store.name, " has annual revenue ", store.annual_revenue, "\n"
+end
