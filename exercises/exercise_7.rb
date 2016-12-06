@@ -19,6 +19,7 @@ class Store < ActiveRecord::Base
   def must_carry_some_clothes
     unless mens_apparel || womens_apparel
       errors.add(:mens_apparel, 'must carry some clothing')
+      errors.add(:womens_apparel, 'must carry some clothing')
       puts ("Must specify what kind of clothing is carried")
     end
   end
