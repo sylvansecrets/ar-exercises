@@ -18,3 +18,8 @@ puts Store.count
 @mens_stores.each do |store|
   print store.name, " has annual revenue ", store.annual_revenue, "\n"
 end
+
+@womens_stores = Store.where(womens_apparel: true).where('annual_revenue < ?', 1000000)
+@womens_stores.each do |store|
+  print store.name, " has annual revenue ", store.annual_revenue, "\n"
+end
